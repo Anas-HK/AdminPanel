@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav pb-4">
             <li class="nav-item">
-                <a class="nav-link active" href="{{route('admin.admin_dashboard')}}">
+                <a class="nav-link active" href="{{route('admin.dashboard')}}">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-app text-dark text-gradient text-md h-100 top-0" aria-hidden="true" style="font-size: 100%;" id="sidenavCardIcon"></i>
                     </div>
@@ -119,7 +119,10 @@
     <div class="sidenav-footer mx-3">
 
 
-        <a class="btn bg-gradient-primary mt-3 w-100" href="https://www.repherred.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Sign out</a>
+        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn bg-gradient-primary mt-3 w-100">Sign out</button>
+        </form>
     </div>
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
@@ -143,7 +146,7 @@
                 <ul class="navbar-nav  justify-content-end">
 
                     <li class="nav-item d-flex align-items-center">
-                        <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+                        <a href="{{route('login')}}" class="nav-link text-body font-weight-bold px-0">
                             <i class="fa fa-user me-sm-1"></i>
                             <span class="d-sm-inline d-none">Sign In</span>
                         </a>

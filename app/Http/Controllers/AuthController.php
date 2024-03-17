@@ -17,7 +17,7 @@ class AuthController extends Controller
         // print_r($credentials);
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('/admin_dashboard'); // Redirect to dashboard upon successful login
+            return redirect()->intended('/dashboard'); // Redirect to dashboard upon successful login
         }
 
         return redirect()->back()->withInput()->withErrors(['email' => 'Invalid email or password']); // Redirect back with error

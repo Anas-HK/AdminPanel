@@ -7,7 +7,7 @@ use App\Http\Controllers\BusinessController;
 
 Route::group(['middleware' => 'auth'], function () {
     // Define routes that require authentication here
-    Route::get('/admin_dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.admin_dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'adminDashboard'])->name('admin.dashboard');
     Route::get('/businesses', [BusinessController::class, 'index'])->name('admin.businesses');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
